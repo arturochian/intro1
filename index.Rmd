@@ -1,18 +1,19 @@
 ---
-title       : Interactive Visualizations
-subtitle    : rCharts, UseR 2014
-author      : Ramnath Vaidyanathan (@ramnath_vaidya)
-job         : McGill University
+title       : Intro a R
+subtitle    : Primer paso
+author      : Arturo Chian
+job         : UNMSM
 --- .nobackground .quote
 
-<q>rCharts is an R package to create, customize and share interactive visualizations by leveraging javascript libraries.</q>
+<q>R es lo máximo.</q>
 
---- #rchartssite
+--- &interactive2 height:100
 
-```{r echo = F, cache = F}
-library(rMaps); library(rCharts)
-source('data/map_specs.R')
-world_map = map_world(geo = list(url = 'world.topo.json'))
+<a class='example'>NVD3</a>
+
+```{r, opts.label = 'interactive', results = 'asis'}
+library(datasets);data(swiss);library(stats);library(graphics)
+pairs(swiss,panel=panel.smooth,main="Swissdata",col=3+(swiss$Catholic>50))
 ```
 
 --- &interactive2 height:100
@@ -20,22 +21,8 @@ world_map = map_world(geo = list(url = 'world.topo.json'))
 <a class='example'>NVD3</a>
 
 ```{r, opts.label = 'interactive', results = 'asis'}
-hair_eye_male <- subset(as.data.frame(HairEyeColor), Sex == 'Male')
-library(rCharts)
-n1 <- nPlot(Freq ~ Hair, group = 'Eye', data = hair_eye_male, type = 'multiBarChart')
-n1
-```
+summary(lm(Fertility ~ . , data = swiss))$coefficients
 
---- &interactive2 height:100
-
-<a class='example'>NVD3</a>
-
-```{r, opts.label = 'interactive', results = 'asis'}
-hair_eye_male <- subset(as.data.frame(HairEyeColor), Sex == 'Male')
-library(rCharts)
-n1 <- nPlot(Freq ~ Hair, group = 'Eye', data = hair_eye_male, type = 'multiBarChart')
-n1$chart(color = c('brown', 'blue', '#594c26', 'green'))
-n1
 ```
 
 --- &interactive2 height:40
@@ -43,8 +30,10 @@ n1
 <a class='example'>DataTable</a>
 
 ```{r opts.label = 'interactive', results = 'asis'}
-library(rCharts)
-dTable(MASS::survey)
+summary(lm(Fertility~Agriculture,data=swiss))$coefficients
+swiss$Infant.Mortality2<-cut2(swiss$Infant.Mortality,g=2)
+qplot(Agriculture, Fertility, data = swiss, geom = c("point", "smooth"),
+method = "lm", shape=Infant.Mortality2)
 ```
 
 

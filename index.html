@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Interactive Visualizations</title>
+  <title>Intro a R</title>
   <meta charset="utf-8">
-  <meta name="description" content="Interactive Visualizations">
-  <meta name="author" content="Ramnath Vaidyanathan (@ramnath_vaidya)">
+  <meta name="description" content="Intro a R">
+  <meta name="author" content="Arturo Chian">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -45,9 +45,9 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>Interactive Visualizations</h1>
-    <h2>rCharts, UseR 2014</h2>
-    <p>Ramnath Vaidyanathan (@ramnath_vaidya)<br/>McGill University</p>
+    <h1>Intro a R</h1>
+    <h2>Primer paso</h2>
+    <p>Arturo Chian<br/>UNMSM</p>
   </hgroup>
     <a href="https://github.com/ramnathv/user2014-rcharts/zipball/gh-pages" class="example">
      Download
@@ -59,15 +59,52 @@
     <!-- SLIDES -->
     <slide class="nobackground quote" id="slide-1" style="background:;">
   <article data-timings="">
-    <p><q>rCharts is an R package to create, customize and share interactive visualizations by leveraging javascript libraries.</q></p>
+    <p><q>R es lo máximo.</q></p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="rchartssite" style="background:;">
+<slide class="" id="slide-2" style="background:;">
   <article data-timings="">
-    
+     
+<div class='row-fluid'>
+  <div class='span12'>
+    <form id="knitForm2" data-cell="2">
+      <p><a class='example'>NVD3</a></p>
+
+<p><textarea class='interactive' id='interactive2' data-cell='2' data-results='asis' style='display:none'>library(datasets);data(swiss);library(stats);library(graphics)
+pairs(swiss,panel=panel.smooth,main=&quot;Swissdata&quot;,col=3+(swiss$Catholic&gt;50))</textarea></p>
+
+      <div id='aceeditor2' style="height:100px;"></div>
+      <div class='interactive btn-toolbar pull-left'>
+        <div class='btn-group'>
+          <a class='btn btn-small action-button' id='runCode2' data-action='runCode'
+            data-cell='2' rel='tooltip' data-title='Run Code'>
+            <i class='icon-play'></i>
+          </a>
+          <a class='btn btn-small iBtn' id='testCode2' data-action='testCode'
+             data-cell='2' rel='tooltip' data-title='Test Code'>
+            <i class='icon-check'></i>
+          </a>
+          <a class='btn btn-small iBtn' id='clearResult2' data-action='clearResult'
+             data-cell='2' rel='tooltip' data-title='Clear Output'>
+            <i class="icon-remove"></i>
+          </a>
+          <a class='btn  btn-small iBtn' id='getHint2' rel='tooltip' 
+            data-title="Get Hint" data-action='getHint'
+            data-cell='2' data-hint="">
+            <i class="icon-bookmark"></i>
+          </a>
+        </div>
+      </div>    </form>
+  </div>
+</div>
+<div class='row-fluid'>
+  <div class='span12'>
+    <iframe id="knitResult2" class='shiny-html-output '></iframe>
+  </div>
+</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -80,10 +117,7 @@
     <form id="knitForm3" data-cell="3">
       <p><a class='example'>NVD3</a></p>
 
-<p><textarea class='interactive' id='interactive3' data-cell='3' data-results='asis' style='display:none'>hair_eye_male &lt;- subset(as.data.frame(HairEyeColor), Sex == &#39;Male&#39;)
-library(rCharts)
-n1 &lt;- nPlot(Freq ~ Hair, group = &#39;Eye&#39;, data = hair_eye_male, type = &#39;multiBarChart&#39;)
-n1</textarea></p>
+<p><textarea class='interactive' id='interactive3' data-cell='3' data-results='asis' style='display:none'>summary(lm(Fertility ~ . , data = swiss))$coefficients</textarea></p>
 
       <div id='aceeditor3' style="height:100px;"></div>
       <div class='interactive btn-toolbar pull-left'>
@@ -124,15 +158,14 @@ n1</textarea></p>
 <div class='row-fluid'>
   <div class='span12'>
     <form id="knitForm4" data-cell="4">
-      <p><a class='example'>NVD3</a></p>
+      <p><a class='example'>DataTable</a></p>
 
-<p><textarea class='interactive' id='interactive4' data-cell='4' data-results='asis' style='display:none'>hair_eye_male &lt;- subset(as.data.frame(HairEyeColor), Sex == &#39;Male&#39;)
-library(rCharts)
-n1 &lt;- nPlot(Freq ~ Hair, group = &#39;Eye&#39;, data = hair_eye_male, type = &#39;multiBarChart&#39;)
-n1$chart(color = c(&#39;brown&#39;, &#39;blue&#39;, &#39;#594c26&#39;, &#39;green&#39;))
-n1</textarea></p>
+<p><textarea class='interactive' id='interactive4' data-cell='4' data-results='asis' style='display:none'>summary(lm(Fertility~Agriculture,data=swiss))$coefficients
+swiss$Infant.Mortality2&lt;-cut2(swiss$Infant.Mortality,g=2)
+qplot(Agriculture, Fertility, data = swiss, geom = c(&quot;point&quot;, &quot;smooth&quot;),
+method = &quot;lm&quot;, shape=Infant.Mortality2)</textarea></p>
 
-      <div id='aceeditor4' style="height:100px;"></div>
+      <div id='aceeditor4' style="height:40px;"></div>
       <div class='interactive btn-toolbar pull-left'>
         <div class='btn-group'>
           <a class='btn btn-small action-button' id='runCode4' data-action='runCode'
@@ -165,51 +198,7 @@ n1</textarea></p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-5" style="background:;">
-  <article data-timings="">
-     
-<div class='row-fluid'>
-  <div class='span12'>
-    <form id="knitForm5" data-cell="5">
-      <p><a class='example'>DataTable</a></p>
-
-<p><textarea class='interactive' id='interactive5' data-cell='5' data-results='asis' style='display:none'>library(rCharts)
-dTable(MASS::survey)</textarea></p>
-
-      <div id='aceeditor5' style="height:40px;"></div>
-      <div class='interactive btn-toolbar pull-left'>
-        <div class='btn-group'>
-          <a class='btn btn-small action-button' id='runCode5' data-action='runCode'
-            data-cell='5' rel='tooltip' data-title='Run Code'>
-            <i class='icon-play'></i>
-          </a>
-          <a class='btn btn-small iBtn' id='testCode5' data-action='testCode'
-             data-cell='5' rel='tooltip' data-title='Test Code'>
-            <i class='icon-check'></i>
-          </a>
-          <a class='btn btn-small iBtn' id='clearResult5' data-action='clearResult'
-             data-cell='5' rel='tooltip' data-title='Clear Output'>
-            <i class="icon-remove"></i>
-          </a>
-          <a class='btn  btn-small iBtn' id='getHint5' rel='tooltip' 
-            data-title="Get Hint" data-action='getHint'
-            data-cell='5' data-hint="">
-            <i class="icon-bookmark"></i>
-          </a>
-        </div>
-      </div>    </form>
-  </div>
-</div>
-<div class='row-fluid'>
-  <div class='span12'>
-    <iframe id="knitResult5" class='shiny-html-output '></iframe>
-  </div>
-</div>
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="segue nobackground" id="slide-6" style="background:;">
+<slide class="segue nobackground" id="slide-5" style="background:;">
   <hgroup>
     <h2>Thank You</h2>
   </hgroup>
@@ -250,14 +239,8 @@ dTable(MASS::survey)</textarea></p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title=''>
+        data-slide=5 title='Thank You'>
          5
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Thank You'>
-         6
       </a>
     </li>
   </ul>

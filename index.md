@@ -1,41 +1,33 @@
 ---
-title       : Interactive Visualizations
-subtitle    : rCharts, UseR 2014
-author      : Ramnath Vaidyanathan (@ramnath_vaidya)
-job         : McGill University
+title       : Intro a R
+subtitle    : Primer paso
+author      : Arturo Chian
+job         : UNMSM
 --- .nobackground .quote
 
-<q>rCharts is an R package to create, customize and share interactive visualizations by leveraging javascript libraries.</q>
-
---- #rchartssite
-
-
+<q>R es lo máximo.</q>
 
 --- &interactive2 height:100
 
 <a class='example'>NVD3</a>
 
-<textarea class='interactive' id='interactive{{slide.num}}' data-cell='{{slide.num}}' data-results='asis' style='display:none'>hair_eye_male <- subset(as.data.frame(HairEyeColor), Sex == 'Male')
-library(rCharts)
-n1 <- nPlot(Freq ~ Hair, group = 'Eye', data = hair_eye_male, type = 'multiBarChart')
-n1</textarea>
+<textarea class='interactive' id='interactive{{slide.num}}' data-cell='{{slide.num}}' data-results='asis' style='display:none'>library(datasets);data(swiss);library(stats);library(graphics)
+pairs(swiss,panel=panel.smooth,main="Swissdata",col=3+(swiss$Catholic>50))</textarea>
 
 --- &interactive2 height:100
 
 <a class='example'>NVD3</a>
 
-<textarea class='interactive' id='interactive{{slide.num}}' data-cell='{{slide.num}}' data-results='asis' style='display:none'>hair_eye_male <- subset(as.data.frame(HairEyeColor), Sex == 'Male')
-library(rCharts)
-n1 <- nPlot(Freq ~ Hair, group = 'Eye', data = hair_eye_male, type = 'multiBarChart')
-n1$chart(color = c('brown', 'blue', '#594c26', 'green'))
-n1</textarea>
+<textarea class='interactive' id='interactive{{slide.num}}' data-cell='{{slide.num}}' data-results='asis' style='display:none'>summary(lm(Fertility ~ . , data = swiss))$coefficients</textarea>
 
 --- &interactive2 height:40
 
 <a class='example'>DataTable</a>
 
-<textarea class='interactive' id='interactive{{slide.num}}' data-cell='{{slide.num}}' data-results='asis' style='display:none'>library(rCharts)
-dTable(MASS::survey)</textarea>
+<textarea class='interactive' id='interactive{{slide.num}}' data-cell='{{slide.num}}' data-results='asis' style='display:none'>summary(lm(Fertility~Agriculture,data=swiss))$coefficients
+swiss$Infant.Mortality2<-cut2(swiss$Infant.Mortality,g=2)
+qplot(Agriculture, Fertility, data = swiss, geom = c("point", "smooth"),
+method = "lm", shape=Infant.Mortality2)</textarea>
 
 
 
