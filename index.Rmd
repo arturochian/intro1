@@ -26,8 +26,8 @@ summary(lm(Fertility ~ . , data = swiss))$coefficients
 ```{r opts.label = 'interactive', results = 'asis'}
 library(Hmisc);library(ggplot2)
 swiss$Examination2<-cut2(swiss$Examination,g=2)
-qplot(Agriculture, Fertility, data = swiss, geom = c("point", "smooth"),
-method = "lm", shape=Examination2)
+qplot(Agriculture, Fertility, data = swiss, geom = c('point', 'smooth'),
+method = 'lm', shape=Examination2)
 ```
 
 

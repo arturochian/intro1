@@ -20,8 +20,8 @@ pairs(swiss,panel=panel.smooth,main='Swissdata',col=3+(swiss$Catholic>50))</text
 
 <textarea class='interactive' id='interactive{{slide.num}}' data-cell='{{slide.num}}' data-results='asis' style='display:none'>library(Hmisc);library(ggplot2)
 swiss$Examination2<-cut2(swiss$Examination,g=2)
-qplot(Agriculture, Fertility, data = swiss, geom = c("point", "smooth"),
-method = "lm", shape=Examination2)</textarea>
+qplot(Agriculture, Fertility, data = swiss, geom = c('point', 'smooth'),
+method = 'lm', shape=Examination2)</textarea>
 
 
 
