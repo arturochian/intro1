@@ -9,16 +9,12 @@ job         : UNMSM
 
 --- &interactive2 height:100
 
-<a class='example'>NVD3</a>
-
 ```{r, opts.label = 'interactive', results = 'asis'}
 library(datasets);data(swiss);library(stats);library(graphics)
-pairs(swiss,panel=panel.smooth,main="Swissdata",col=3+(swiss$Catholic>50))
+pairs(swiss,panel=panel.smooth,main='Swissdata',col=3+(swiss$Catholic>50))
 ```
 
 --- &interactive2 height:100
-
-<a class='example'>NVD3</a>
 
 ```{r, opts.label = 'interactive', results = 'asis'}
 summary(lm(Fertility ~ . , data = swiss))$coefficients
@@ -27,13 +23,11 @@ summary(lm(Fertility ~ . , data = swiss))$coefficients
 
 --- &interactive2 height:40
 
-<a class='example'>DataTable</a>
-
 ```{r opts.label = 'interactive', results = 'asis'}
-summary(lm(Fertility~Agriculture,data=swiss))$coefficients
-swiss$Infant.Mortality2<-cut2(swiss$Infant.Mortality,g=2)
+library(Hmisc);library(ggplot2)
+swiss$Examination2<-cut2(swiss$Examination,g=2)
 qplot(Agriculture, Fertility, data = swiss, geom = c("point", "smooth"),
-method = "lm", shape=Infant.Mortality2)
+method = "lm", shape=Examination2)
 ```
 
 

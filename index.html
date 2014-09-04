@@ -71,10 +71,8 @@
 <div class='row-fluid'>
   <div class='span12'>
     <form id="knitForm2" data-cell="2">
-      <p><a class='example'>NVD3</a></p>
-
-<p><textarea class='interactive' id='interactive2' data-cell='2' data-results='asis' style='display:none'>library(datasets);data(swiss);library(stats);library(graphics)
-pairs(swiss,panel=panel.smooth,main=&quot;Swissdata&quot;,col=3+(swiss$Catholic&gt;50))</textarea></p>
+      <p><textarea class='interactive' id='interactive2' data-cell='2' data-results='asis' style='display:none'>library(datasets);data(swiss);library(stats);library(graphics)
+pairs(swiss,panel=panel.smooth,main=&#39;Swissdata&#39;,col=3+(swiss$Catholic&gt;50))</textarea></p>
 
       <div id='aceeditor2' style="height:100px;"></div>
       <div class='interactive btn-toolbar pull-left'>
@@ -115,9 +113,7 @@ pairs(swiss,panel=panel.smooth,main=&quot;Swissdata&quot;,col=3+(swiss$Catholic&
 <div class='row-fluid'>
   <div class='span12'>
     <form id="knitForm3" data-cell="3">
-      <p><a class='example'>NVD3</a></p>
-
-<p><textarea class='interactive' id='interactive3' data-cell='3' data-results='asis' style='display:none'>summary(lm(Fertility ~ . , data = swiss))$coefficients</textarea></p>
+      <p><textarea class='interactive' id='interactive3' data-cell='3' data-results='asis' style='display:none'>summary(lm(Fertility ~ . , data = swiss))$coefficients</textarea></p>
 
       <div id='aceeditor3' style="height:100px;"></div>
       <div class='interactive btn-toolbar pull-left'>
@@ -158,12 +154,10 @@ pairs(swiss,panel=panel.smooth,main=&quot;Swissdata&quot;,col=3+(swiss$Catholic&
 <div class='row-fluid'>
   <div class='span12'>
     <form id="knitForm4" data-cell="4">
-      <p><a class='example'>DataTable</a></p>
-
-<p><textarea class='interactive' id='interactive4' data-cell='4' data-results='asis' style='display:none'>summary(lm(Fertility~Agriculture,data=swiss))$coefficients
-swiss$Infant.Mortality2&lt;-cut2(swiss$Infant.Mortality,g=2)
+      <p><textarea class='interactive' id='interactive4' data-cell='4' data-results='asis' style='display:none'>library(Hmisc);library(ggplot2)
+swiss$Examination2&lt;-cut2(swiss$Examination,g=2)
 qplot(Agriculture, Fertility, data = swiss, geom = c(&quot;point&quot;, &quot;smooth&quot;),
-method = &quot;lm&quot;, shape=Infant.Mortality2)</textarea></p>
+method = &quot;lm&quot;, shape=Examination2)</textarea></p>
 
       <div id='aceeditor4' style="height:40px;"></div>
       <div class='interactive btn-toolbar pull-left'>
