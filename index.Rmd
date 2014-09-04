@@ -3,6 +3,7 @@ title       : Intro a R
 subtitle    : Primer paso
 author      : Arturo Chian
 job         : UNMSM
+
 --- .nobackground .quote
 
 <q>R es lo máximo.</q>
